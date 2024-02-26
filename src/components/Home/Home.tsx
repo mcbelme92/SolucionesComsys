@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Post } from "../../interface/post.interface";
 import { ApiManagerPost } from "../../api/post.api";
 import { countPostsByUser, findLongestTitles } from "../../utils/postUtils";
-
-const Home: React.FC = () => {
+interface HomeProps {
+  title: string;
+}
+const Home: React.FC<HomeProps> = ({ title }) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   // Efecto para cargar los datos del JSON al montar el componente
@@ -23,7 +25,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center">Soluciones Comsys</h1>
+      <h1 className="text-center">{title}</h1>
       <div className="row">
         <div className="col-md-6">
           <div className="card">

@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <Home />
+      <Home title="Soluciones Comsys" />
     </div>
   );
 }
