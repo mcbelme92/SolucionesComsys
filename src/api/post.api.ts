@@ -3,6 +3,8 @@ import { BASE_URL_PATH } from "./constants";
 import { Post } from "../interface/post.interface";
 
 export class ApiManagerPost {
+  // Método para obtener los posts de la API
+  // Devuelve una promesa que resuelve en un objeto con los datos de los posts o undefined en caso de error
   getPostApi = async (): Promise<{ data: Post[] | undefined }> => {
     try {
       const url: string = `${BASE_URL_PATH}`;
