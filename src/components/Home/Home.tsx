@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Post } from "../../interface/post.interface";
 import { ApiManagerPost } from "../../api/post.api";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { countPostsByUser, findLongestTitles } from "../../utils/postUtils";
 
 const Home: React.FC = () => {
