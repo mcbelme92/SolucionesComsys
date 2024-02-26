@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Post } from "../../interface/post.interface";
 import { ApiManagerPost } from "../../api/post.api";
 import { countPostsByUser, findLongestTitles } from "../../utils/postUtils";
-interface HomeProps {
-  title: string;
-}
+import { HomeProps } from "../../interface/HomeProps";
+
 const Home: React.FC<HomeProps> = ({ title }) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
