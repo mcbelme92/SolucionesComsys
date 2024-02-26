@@ -1,6 +1,29 @@
-# React + TypeScript + Vite
+# Proyecto Soluciones Comsys
 
-Proyecto Soluciones Comsys
+### React + TypeScript + Vite
+
+Ejecutar el Proyecto
+Para ejecutar el proyecto en modo de desarrollo, sigue estos pasos:
+
+Asegúrate de tener Yarn instalado en tu sistema. Si no lo tienes, puedes instalarlo siguiendo las instrucciones oficiales de Yarn.
+
+Abre una terminal y navega hasta el directorio raíz de tu proyecto.
+
+Ejecuta el siguiente comando para instalar las dependencias del proyecto:
+
+```js
+yarn install
+```
+
+Una vez que todas las dependencias estén instaladas, ejecuta el siguiente comando para iniciar el servidor de desarrollo:
+
+```js
+yarn dev
+```
+
+El servidor de desarrollo debería iniciarse correctamente. Abre tu navegador web y navega a la dirección proporcionada por el servidor (generalmente http://localhost:3000).
+
+¡Ahora puedes comenzar a trabajar en tu proyecto!
 
 ## Home
 
