@@ -21,7 +21,7 @@ Una vez que todas las dependencias estén instaladas, ejecuta el siguiente coman
 yarn dev
 ```
 
-El servidor de desarrollo debería iniciarse correctamente. Abre tu navegador web y navega a la dirección proporcionada por el servidor (generalmente http://localhost:3000).
+El servidor de desarrollo debería iniciarse correctamente. Abre tu navegador web y navega a la dirección proporcionada por el servidor (generalmente http://localhost:5173/).
 
 ¡Ahora puedes comenzar a trabajar en tu proyecto!
 
