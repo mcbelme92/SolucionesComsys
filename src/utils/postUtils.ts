@@ -9,10 +9,13 @@ import { Post } from "../interface/post.interface";
 export const countPostsByUser = (posts: Post[]): { [key: number]: number } => {
   const postCount: { [key: number]: number } = {};
   posts.forEach((post) => {
-    if (postCount[post.userId]) {
-      postCount[post.userId] += 1;
-    } else {
-      postCount[post.userId] = 1;
+    // Comprobación de tipo para evitar valores undefined
+    if (post.userId !== undefined) {
+      if (postCount[post.userId]) {
+        postCount[post.userId] += 1;
+      } else {
+        postCount[post.userId] = 1;
+      }
     }
   });
   return postCount;
