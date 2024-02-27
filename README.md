@@ -165,3 +165,58 @@ Notas Adicionales
 Las interfaces proporcionan una forma de definir la estructura de los datos y garantizar consistencia en la aplicación.
 La interfaz getPost se utiliza para encapsular los datos devueltos por la API de obtener publicaciones, lo que permite un manejo más fácil y estructurado de los datos en la aplicación.
 Esta documentación proporciona una descripción clara de las interfaces Post y getPost y su propósito en la aplicación. Se puede complementar con ejemplos de uso y detalles adicionales según sea necesario para comprender mejor su implementación y su contribución al proyecto.
+
+## PostInfoDisplay
+
+Path: `src/components/PostInfoDisplay.tsx`
+
+El componente PostInfoDisplay es una interfaz de usuario diseñada para mostrar información sobre publicaciones por usuario y publicaciones con títulos más largos.
+
+Uso
+Para utilizar el componente PostInfoDisplay, sigue estos pasos:
+
+Importa el componente en tu archivo:
+
+```ts
+import PostInfoDisplay from "./components/PostInfoDisplay/PostInfoDisplay";
+```
+
+Pasa las propiedades requeridas al componente:
+
+```ts
+<PostInfoDisplay
+  title="Título del componente"
+  postsByUser={[
+    { userId: 1, count: 5 },
+    { userId: 2, count: 3 },
+  ]}
+  longestTitles={[
+    { id: 1, title: "Título 1" },
+    { id: 2, title: "Título 2" },
+  ]}
+/>
+```
+
+Propiedades
+El componente acepta las siguientes propiedades:
+
+title (string): El título que se mostrará en la parte superior del componente.
+postsByUser (array de objetos): Un array que representa las publicaciones por usuario. Cada objeto debe tener las propiedades userId (número) y count (número).
+longestTitles (array de objetos): Un array que representa las publicaciones con títulos más largos. Cada objeto debe tener las propiedades id (número) y title (string).
+Ejemplo
+
+```ts
+<PostInfoDisplay
+  title="Estadísticas de Publicaciones"
+  postsByUser={[
+    { userId: 1, count: 5 },
+    { userId: 2, count: 3 },
+  ]}
+  longestTitles={[
+    { id: 1, title: "Título 1" },
+    { id: 2, title: "Título 2" },
+  ]}
+/>
+```
+
+Este código mostrará un componente PostInfoDisplay con el título "Estadísticas de Publicaciones", información sobre las publicaciones por usuario y las publicaciones con títulos más largos.

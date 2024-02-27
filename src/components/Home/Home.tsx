@@ -4,6 +4,7 @@ import { Post } from "../../interface/post.interface";
 import { ApiManagerPost } from "../../api/post.api";
 import { countPostsByUser, findLongestTitles } from "../../utils/postUtils";
 import { HomeProps } from "../../interface/HomeProps";
+import PostInfoDisplay from "../PostInfoDisplay/PostInfoDisplay";
 
 const Home: React.FC<HomeProps> = ({ title }) => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -23,44 +24,15 @@ const Home: React.FC<HomeProps> = ({ title }) => {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center">{title}</h1>
-      <div className="row">
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="card-title">Publicaciones por Usuario</h2>
-              <div>
-                {Object.keys(countPostsByUser(posts)).map((userId) => (
-                  <div key={userId}>
-                    <h5>ID Usuario: {userId}</h5>
-                    <p>
-                      Publicaciones: {countPostsByUser(posts)[parseInt(userId)]}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="card-title">
-                Publicaciones con Títulos Más Largos
-              </h2>
-              <ul className="list-group">
-                {findLongestTitles(posts).map((post) => (
-                  <li key={post.id} className="list-group-item">
-                    <strong>ID Post:</strong> {post.id} -{" "}
-                    <strong>Título:</strong> {post.title}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <PostInfoDisplay
+        title={title}
+        postsByUser={Object.keys(countPostsByUser(posts)).map((userId) => ({
+          userId: parseInt(userId),
+          count: countPostsByUser(posts)[parseInt(userId)],
+        }))}
+        longestTitles={findLongestTitles(posts)}
+      />
     </div>
   );
 };
