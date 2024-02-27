@@ -49,6 +49,46 @@ Encuentra las publicaciones con los títulos más largos.
  findLongestTitles(posts: Post[]): { id: number; title: string }[]
 ```
 
+Ejemplo
+
+```ts
+const preparePostsByUser = (posts: Post[]) => {
+  return Object.keys(countPostsByUser(posts)).map((userId) => ({
+    userId: parseInt(userId),
+    count: countPostsByUser(posts)[parseInt(userId)],
+  }));
+};
+const prepareLongestTitles = (posts: Post[]) => {
+  return findLongestTitles(posts);
+};
+
+return (
+  <div>
+    <PostInfoDisplay
+      title={title}
+      postsByUser={preparePostsByUser(posts)}
+      longestTitles={prepareLongestTitles(posts)}
+    />
+  </div>
+);
+```
+
+### preparePostsByUser y prepareLongestTitles:
+
+Estas son funciones que se utilizan para preparar los datos antes de pasarlos al componente PostInfoDisplay.
+preparePostsByUser: Toma un array de objetos Post como entrada y devuelve un nuevo array de objetos que contiene la cantidad de publicaciones por usuario.
+Utiliza la función countPostsByUser(posts) para contar las publicaciones por usuario.
+Utiliza Object.keys() para obtener las claves (IDs de usuario) del objeto devuelto por countPostsByUser.
+Mapea sobre estas claves para crear un nuevo array de objetos donde cada objeto tiene las propiedades userId (convertido a número entero usando parseInt) y count (el número de publicaciones para ese usuario).
+prepareLongestTitles: Toma un array de objetos Post como entrada y devuelve un nuevo array de objetos que contiene las publicaciones con los títulos más largos.
+Utiliza la función findLongestTitles(posts) para encontrar las publicaciones con los títulos más largos.
+Retorno del componente:
+
+Dentro del componente, se renderiza PostInfoDisplay.
+title se pasa como prop title a PostInfoDisplay.
+preparePostsByUser(posts) se utiliza para preparar los datos sobre las publicaciones por usuario y se pasa como prop postsByUser.
+prepareLongestTitles(posts) se utiliza para preparar los datos sobre las publicaciones con títulos más largos y se pasa como prop longestTitles.
+En resumen, estas funciones preparePostsByUser y prepareLongestTitles se utilizan para preparar los datos antes de pasarlos al componente PostInfoDisplay.
 Estilo:
 El componente Home utiliza estilos de Bootstrap para el diseño y la presentación de la interfaz de usuario.
 
