@@ -170,7 +170,7 @@ Esta documentación proporciona una descripción clara de las interfaces Post y 
 
 Path: `src/components/PostInfoDisplay.tsx`
 
-El componente PostInfoDisplay es una interfaz de usuario diseñada para mostrar información sobre publicaciones por usuario y publicaciones con títulos más largos.
+El componente PostInfoDisplay reutilizable es una interfaz de usuario diseñada para mostrar información sobre publicaciones por usuario y publicaciones con títulos más largos.
 
 Uso
 Para utilizar el componente PostInfoDisplay, sigue estos pasos:
