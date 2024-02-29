@@ -48,7 +48,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
               <ul className="list-group">
                 {longestTitles.map((post: Post) => (
                   <li key={post.id} className="list-group-item">
-                    <strong>ID Post:</strong> {post.id} -{" "}
+                    <strong>ID Post:</strong> {post.id}
                     <strong>Título:</strong> {post.title}
                   </li>
                 ))}
