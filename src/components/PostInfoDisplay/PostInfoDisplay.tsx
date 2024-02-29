@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Post,
   PostInfoDisplayProps,
   UserPosts,
 } from "../../interface/post.interface";
@@ -45,7 +46,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
                 Publicaciones con Títulos Más Largos
               </h2>
               <ul className="list-group">
-                {longestTitles.map((post) => (
+                {longestTitles.map((post: Post) => (
                   <li key={post.id} className="list-group-item">
                     <strong>ID Post:</strong> {post.id} -{" "}
                     <strong>Título:</strong> {post.title}
