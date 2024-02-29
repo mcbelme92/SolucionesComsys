@@ -1,5 +1,8 @@
 import React from "react";
-import { PostInfoDisplayProps } from "../../interface/post.interface";
+import {
+  PostInfoDisplayProps,
+  UserPosts,
+} from "../../interface/post.interface";
 /**
  * Componente para mostrar información sobre publicaciones por usuario y publicaciones con títulos más largos.
  *
@@ -25,10 +28,10 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
             <div className="card-body">
               <h2 className="card-title">Publicaciones por Usuario</h2>
               <div>
-                {postsByUser.map(({ userId, count }) => (
-                  <div key={userId}>
-                    <h5>ID Usuario: {userId}</h5>
-                    <p>Publicaciones: {count}</p>
+                {postsByUser.map((userPost: UserPosts) => (
+                  <div key={userPost.userId}>
+                    <h5>ID Usuario: {userPost.userId}</h5>
+                    <p>Publicaciones: {userPost.count}</p>
                   </div>
                 ))}
               </div>
