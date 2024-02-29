@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import { BASE_URL_PATH } from "./constants";
 import { Post } from "../interface/post.interface";
 
@@ -11,8 +11,9 @@ export class ApiManagerPost {
       const response: AxiosResponse<Post[]> = await axios.get<Post[]>(url);
       const result: Post[] | undefined = response.data;
       return { data: result };
-    } catch (error: any) {
-      console.error("Error al obtener datos:", error.message);
+    } catch (error: unknown) {
+      const err = error as AxiosError;
+      console.error("Error al obtener datos:", err.message);
       return { data: undefined };
     }
   };
