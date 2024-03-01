@@ -23,11 +23,12 @@ const Home: React.FC<HomeProps> = ({ title }) => {
     fetchData();
   }, []);
   const preparePostsByUser = (posts: Post[]) => {
-    return Object.keys(countPostsByUser(posts)).map((userId) => ({
+    return Object.entries(countPostsByUser(posts)).map(([userId, count]) => ({
       userId: parseInt(userId),
-      count: countPostsByUser(posts)[parseInt(userId)],
+      count: count,
     }));
   };
+
   const prepareLongestTitles = (posts: Post[]) => {
     return findLongestTitles(posts);
   };

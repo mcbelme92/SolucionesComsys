@@ -1,9 +1,3 @@
-import React from "react";
-import {
-  Post,
-  PostInfoDisplayProps,
-  UserPosts,
-} from "../../interface/post.interface";
 /**
  * Componente para mostrar información sobre publicaciones por usuario y publicaciones con títulos más largos.
  *
@@ -14,6 +8,13 @@ import {
  * @param {Post[]} props.longestTitles - Un array de objetos que representa las publicaciones con títulos más largos.
  * @returns {TSX.Element}
  */
+
+import React from "react";
+import {
+  Post,
+  PostInfoDisplayProps,
+  UserPosts,
+} from "../../interface/post.interface";
 
 const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
   title,
@@ -31,7 +32,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
               <div>
                 {postsByUser.map((userPost: UserPosts) => (
                   <div key={userPost.userId}>
-                    <h5>ID Usuario: {userPost.userId}</h5>
+                    <h5>ID Usuario: {userPost.userId}</h5>{" "}
                     <p>Publicaciones: {userPost.count}</p>
                   </div>
                 ))}
@@ -48,8 +49,8 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
               <ul className="list-group">
                 {longestTitles.map((post: Post) => (
                   <li key={post.id} className="list-group-item">
-                    <strong>ID Post:</strong> {post.id}
-                    <strong>Título:</strong> {post.title}
+                    <strong>ID Post:</strong> {post.id} <strong>Título:</strong>{" "}
+                    {post.title}
                   </li>
                 ))}
               </ul>
