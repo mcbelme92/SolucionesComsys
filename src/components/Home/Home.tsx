@@ -24,7 +24,7 @@ const Home: React.FC<HomeProps> = ({ title }) => {
   }, []);
   const preparePostsByUser = (posts: Post[]) => {
     return Object.entries(countPostsByUser(posts)).map(([userId, count]) => ({
-      userId: parseInt(userId),
+      userId: Number(userId),
       count: count,
     }));
   };
