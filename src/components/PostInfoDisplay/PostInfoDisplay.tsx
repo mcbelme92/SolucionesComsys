@@ -32,7 +32,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
               <div>
                 {postsByUser.map((userPost: UserPosts) => (
                   <div key={userPost.userId}>
-                    <strong>ID Usuario:</strong> {userPost.userId}
+                    <strong>ID Usuario:</strong> {userPost.userId}{" "}
                     <strong>Publicaciones: </strong>
                     {userPost.count}
                   </div>
