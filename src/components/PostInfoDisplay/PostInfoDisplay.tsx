@@ -41,7 +41,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
             </div>
           </div>
         </div>
-        <div className="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+        <div className="col-sm-5 col-md-6">
           <div className="card">
             <div className="card-body">
               <h2 className="card-title">
