@@ -25,8 +25,8 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
     <div className="container mt-5">
       <h1 className="text-center">{title}</h1>
       <div className="row">
-        <div className="col-md-6">
-          <div className="card mb-4">
+        <div className="col-sm-5 col-md-6">
+          <div className="card ">
             <div className="card-body">
               <h2 className="card-title">Publicaciones por Usuario</h2>
               <div>
@@ -41,7 +41,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
             </div>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
           <div className="card">
             <div className="card-body">
               <h2 className="card-title">
@@ -49,7 +49,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
               </h2>
               <ul className="list-group">
                 {longestTitles.map((post: Post) => (
-                  <li key={post.id} className="list-group-item mb-3">
+                  <li key={post.id} className="list-group-item">
                     <strong>ID Post:</strong> {post.id} <strong>Título:</strong>{" "}
                     {post.title}
                   </li>
