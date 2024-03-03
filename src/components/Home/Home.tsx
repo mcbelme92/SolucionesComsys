@@ -5,15 +5,18 @@ import { ApiManagerPost } from "../../api/post.api";
 import { countPostsByUser, findLongestTitles } from "../../utils/postUtils";
 import { HomeProps } from "../../interface/HomeProps";
 import PostInfoDisplay from "../PostInfoDisplay/PostInfoDisplay";
+import { FetchData } from "../../interface/fetch.Interfaces";
 
-const Home: React.FC<HomeProps> = ({ title }) => {
+const Home: React.FC<HomeProps> = ({ title }): JSX.Element => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   // Efecto para cargar los datos del JSON al montar el componente
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData: FetchData = async (): Promise<void> => {
       const apiManagerPost = new ApiManagerPost();
+
       const response = await apiManagerPost.getPostApi();
+
       if (response.data !== undefined) {
         setPosts(response.data);
       } else {

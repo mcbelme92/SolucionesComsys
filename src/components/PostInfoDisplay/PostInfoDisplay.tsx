@@ -20,7 +20,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
   title,
   postsByUser,
   longestTitles,
-}) => {
+}): JSX.Element => {
   return (
     <div className="container mt-5">
       <h1 className="text-center">{title}</h1>
