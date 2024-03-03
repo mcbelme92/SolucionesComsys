@@ -1,6 +1,10 @@
 // Importa las bibliotecas necesarias
 import React, { useEffect, useState } from "react";
-import { Post } from "../../interface/post.interface";
+import {
+  FindLongestTitles,
+  Post,
+  PreparePostsByUser,
+} from "../../interface/post.interface";
 import { ApiManagerPost } from "../../api/post.api";
 import { countPostsByUser, findLongestTitles } from "../../utils/postUtils";
 import { HomeProps } from "../../interface/HomeProps";
@@ -25,14 +29,14 @@ const Home: React.FC<HomeProps> = ({ title }): JSX.Element => {
     };
     fetchData();
   }, []);
-  const preparePostsByUser = (posts: Post[]) => {
+  const preparePostsByUser: PreparePostsByUser = (posts: Post[]) => {
     return Object.keys(countPostsByUser(posts)).map((userId) => ({
       userId: parseInt(userId),
       count: countPostsByUser(posts)[parseInt(userId)],
     }));
   };
 
-  const prepareLongestTitles = (posts: Post[]) => {
+  const prepareLongestTitles: FindLongestTitles = (posts: Post[]) => {
     return findLongestTitles(posts);
   };
 

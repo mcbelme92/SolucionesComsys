@@ -68,3 +68,17 @@ export type CountPostsByUserFunction = (posts: Post[]) => {
 export type FindLongestTitles = (
   posts: Post[]
 ) => { id: number; title: string }[];
+
+/**
+ * Definición del tipo para la función que prepara los datos de las publicaciones por usuario.
+ * Esta función toma un array de objetos Post que representan las publicaciones
+ * y devuelve un array de objetos con la estructura { userId: number, count: number }[],
+ * que representa el recuento de publicaciones por usuario.
+ * @param posts Un array de objetos Post que representan las publicaciones.
+ * @returns Un array de objetos con la estructura { userId: number, count: number }[] representando el recuento de publicaciones por usuario.
+ */
+
+export type PreparePostsByUser = (posts: Post[]) => {
+  userId: number;
+  count: number;
+}[];
