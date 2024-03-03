@@ -28,6 +28,15 @@ const Home: React.FC<HomeProps> = ({ title }): JSX.Element => {
       }
     };
     fetchData();
+    const metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    metaDescription.content = "Da publicaciones estrucutradas por usuario";
+    document.head.appendChild(metaDescription);
+
+    // Limpieza al desmontar el componente
+    return () => {
+      document.head.removeChild(metaDescription);
+    };
   }, []);
   const preparePostsByUser: PreparePostsByUser = (posts: Post[]) => {
     return Object.keys(countPostsByUser(posts)).map((userId) => ({
