@@ -26,7 +26,7 @@ const PostInfoDisplay: React.FC<PostInfoDisplayProps> = ({
       <h1 className="text-center">{title}</h1>
       <div className="row">
         <div className="col-sm-5 col-md-6">
-          <div className="card ">
+          <div className="card mb-4">
             <div className="card-body">
               <h2 className="card-title">Publicaciones por Usuario</h2>
               <div>
