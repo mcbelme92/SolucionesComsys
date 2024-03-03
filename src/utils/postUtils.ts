@@ -1,8 +1,8 @@
+import { Post } from "../interface/post.interface";
 import {
   CountPostsByUserFunction,
   FindLongestTitles,
-  Post,
-} from "../interface/post.interface";
+} from "../interface/post.types";
 
 /**
  * Cuenta el número de publicaciones por usuario.
@@ -34,8 +34,12 @@ export const countPostsByUser: CountPostsByUserFunction = (
  */
 export const findLongestTitles: FindLongestTitles = (
   posts: Post[]
-): { id: number; title: string }[] => {
+): { userId: number; id: number; title: string }[] => {
   const sortedPosts = posts.sort((a, b) => b.title.length - a.title.length);
   const longestTitles = sortedPosts.slice(0, 3);
-  return longestTitles.map((post) => ({ id: post.id, title: post.title }));
+  return longestTitles.map((post) => ({
+    userId: post.userId,
+    id: post.id,
+    title: post.title,
+  }));
 };
